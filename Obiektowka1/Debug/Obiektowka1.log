@@ -1,0 +1,7 @@
+﻿C:\Adrian\Programowanie\Programy\Visual Studio Enterprise 2017\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Obiektowka1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Ulamek.cpp
+  Car.cpp
+  Pasenger.cpp
+  main.cpp
+  Generating Code...
+  Obiektowka1.vcxproj -> C:\Adrian\Programowanie\Moje\C++\Object-oriented\Debug\Object-oriented.exe
