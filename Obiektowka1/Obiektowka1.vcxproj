@@ -112,14 +112,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Osoba.h" />
     <ClInclude Include="Pasenger.h" />
     <ClInclude Include="Car.h" />
+    <ClInclude Include="Prowadzacy.h" />
+    <ClInclude Include="Student.h" />
     <ClInclude Include="Ulamek.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Osoba.cpp" />
     <ClCompile Include="Pasenger.cpp" />
     <ClCompile Include="Car.cpp" />
+    <ClCompile Include="Prowadzacy.cpp" />
+    <ClCompile Include="Student.cpp" />
     <ClCompile Include="Ulamek.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

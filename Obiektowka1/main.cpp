@@ -2,17 +2,22 @@
 #include "Pasenger.h"
 #include "Ulamek.h"
 #include <stddef.h>
+#include <ctime>
+#include "Osoba.h"
+#include "Student.h"
+#include "Prowadzacy.h"
 
 using namespace std;
 
 void OperationOnClass();
 void OperationFriend();
+void Dziedziczenie();
 void wypisz(Ulamek* ulam);
 ostream & operator<<(ostream & wyjscie, Ulamek* ulamek);
 
 int main()
 {
-	OperationOnClass();
+	Dziedziczenie();
 	system("PAUSE");
 	return 0;
 }
@@ -125,5 +130,93 @@ void OperationOnClass()
 	delete p4;
 	delete p5;
 	delete p6;
+}
+#pragma endregion
+
+#pragma region Dziedziczenie Operation 
+void Dziedziczenie()
+{
+	srand(time(nullptr));
+	//Osoba* osoba1 = new Osoba();
+	Student* student1 = new Student("Ban", "Kul", 1, 2, 3);
+	Prowadzacy* prowadzacy1 = new Prowadzacy("Qwerty", "Uiop", "Infiormatyka", "o godzinie 16:00 w B4 101");
+
+	cout << endl;
+
+	Osoba::WypiszLicznik();
+
+	cout << endl;
+
+	//Osoba* osoba2 = new Osoba(osoba1);
+	Student* student2 = new Student(student1);
+	Prowadzacy* prowadzacy2 = new Prowadzacy(prowadzacy1);
+
+	cout << endl;
+
+	Osoba::WypiszLicznik();
+
+	cout << endl;
+
+	//delete osoba1;
+	delete student1;
+	delete prowadzacy1;
+
+	cout << endl;
+
+	Osoba::WypiszLicznik();
+
+	cout << endl;
+
+	//delete osoba2;
+	delete student2;
+	delete prowadzacy2;
+
+	cout << endl;
+
+	Osoba::WypiszLicznik();
+
+	cout << endl;
+
+	Osoba** tabOsoba = new Osoba*[6];
+
+	//tabOsoba[0] = new Osoba("AAAAAA", "BBBBBB");
+	//tabOsoba[1] = new Osoba("CCCCCC", "DDDDDD");
+	//tabOsoba[2] = new Osoba("EEEEEE", "FFFFFF");
+
+	cout << endl;
+
+	tabOsoba[0] = new Student("GGGGGG", "HHHHHH", rand() % 6 + 1, rand() % 6 + 1, rand() % 6 + 1);
+	tabOsoba[1] = new Student("IIIIII", "JJJJJJ", rand() % 6 + 1, rand() % 6 + 1, rand() % 6 + 1);
+	tabOsoba[2] = new Student("KKKKKK", "LLLLLL", rand() % 6 + 1, rand() % 6 + 1, rand() % 6 + 1);
+
+	cout << endl;
+
+	tabOsoba[3] = new Prowadzacy("MMMMMM", "NNNNNN", "Geografia", "o godzinie 10:00 w B1 111");
+	tabOsoba[4] = new Prowadzacy("OOOOOO", "PPPPPP", "Matma", "o godzinie 12:00 w B2 222");
+	tabOsoba[5] = new Prowadzacy("RRRRRR", "SSSSSS", "Biologia", "o godzinie 14:00 w B3 333");
+
+	cout << endl;
+
+	Osoba::WypiszLicznik();
+
+	cout << endl;
+
+	for (int i = 0; i < 6; i++)
+	{
+		tabOsoba[i]->Wypisz();
+		if(i > 0 && (i + 1) % 3 == 0)
+			cout << endl;
+	}
+
+	cout << endl;
+
+	for (int i = 0; i < 6; i++)
+		delete tabOsoba[i];
+
+	delete[] tabOsoba;
+
+	cout << endl;
+
+	Osoba::WypiszLicznik();
 }
 #pragma endregion
